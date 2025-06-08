@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 
 interface VideoPlayerProps {
@@ -32,20 +31,23 @@ const VideoPlayer = ({ src, poster }: VideoPlayerProps) => {
 
   return (
     <div className="w-full h-full relative">
-      <div className="w-full h-full relative">
-        <img 
-          src="/lovable-uploads/e1318862-abcd-4b27-b60a-dc45b144db80.png" 
-          alt="Zeus Statue with Lightning"
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <video 
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        className="w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
       
       <div className="absolute inset-0 flex items-center justify-between px-2 md:px-4 bg-black/30">
-        <div className="text-white text-3xl md:text-5xl lg:text-6xl font-bold max-w-md">
+        <div className="text-white text-3xl md:text-5xl lg:text-6xl font-bold max-w-md font-caesar">
           <span className="block">Wear The Power,</span>
           <span className="block">Own The Myth.</span>
         </div>
-        <div className="text-white text-3xl md:text-5xl lg:text-6xl font-bold text-right max-w-md">
+        <div className="text-white text-3xl md:text-5xl lg:text-6xl font-bold text-right max-w-md font-caesar">
           <span className="block">Ancient Roots</span>
           <span className="block">Modern</span>
           <span className="block">Expression</span>

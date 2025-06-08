@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'caesar': ['"Caesar Dressing"', 'cursive'],
+				'ebgaramond': ['"EB Garamond"', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

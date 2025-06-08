@@ -158,7 +158,6 @@ const About = () => {
         </section>
       </main>
       
-      <Newsletter />
       <Footer />
     </div>
   );

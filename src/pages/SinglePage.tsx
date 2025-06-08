@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Newsletter from '../components/Newsletter';
+// import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import VideoPlayer from '../components/VideoPlayer';
 
@@ -27,21 +27,19 @@ const SinglePage = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full bg-black overflow-hidden"
-        style={{ height: "22.5rem", position: "relative" }}
+        className="w-full bg-black py-4"
       >
-        <video
-          src="/gg-1.mp4"
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-        />
-        <Link to="/" className="absolute inset-0 z-10 flex items-center justify-center">
-          {/* Optional: overlay logo or content here */}
-        </Link>
+        <div className="container mx-auto px-4 flex justify-center">
+          <Link to="/" className="flex items-center justify-center">
+            <motion.img 
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              src="/lovable-uploads/0347627e-6356-4431-b176-5a32a4de480f.png" 
+              alt="Company Logo" 
+              className="h-24 w-auto" 
+            />
+          </Link>
+        </div>
       </motion.header>
       
       {/* Main content with video player - full width */}
@@ -68,40 +66,54 @@ const SinglePage = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="relative py-20 px-6 md:px-12 bg-black text-white"
         >
-          <div className="absolute inset-0 bg-cover bg-center" style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843')",
-            filter: "brightness(0.65)"
-          }}></div>
-          <motion.div 
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="relative z-10 py-20 px-6 md:px-12 text-white"
-          >
-            <div className="max-w-3xl mx-auto">
-              <motion.h2 
-                variants={fadeInUp}
-                className="text-4xl md:text-5xl font-caesar mb-8 text-center tracking-wider"
-              >
-                PURPOSE
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 text-center font-light">
-                Greek God is more than clothing. It's a reminder of who you are and what you're capable of.
-              </motion.p>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 text-center font-light">
-                The greatest warriors, thinkers, and leaders of history lived with discipline, strength, and purpose.
-              </motion.p>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 text-center font-light">
-                We are their descendants. That same fire runs in our veins.
-              </motion.p>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-center font-light">
-                Every design is a symbol—a call to awaken that power within.
-              </motion.p>
-            </div>
-          </motion.div>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Text Column */}
+            <motion.div 
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="relative z-10"
+            >
+              <div className="max-w-none mx-auto text-left">
+                <motion.h2 
+                  variants={fadeInUp}
+                  className="text-4xl md:text-5xl font-caesar mb-8 tracking-wider"
+                >
+                  PURPOSE
+                </motion.h2>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 font-ebgaramond">
+                  Greek God is more than clothing. It's a reminder of who you are and what you're capable of.
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 font-ebgaramond">
+                  The greatest warriors, thinkers, and leaders of history lived with discipline, strength, and purpose.
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 font-ebgaramond">
+                  We are their descendants. That same fire runs in our veins.
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed font-ebgaramond">
+                  Every design is a symbol—a call to awaken that power within.
+                </motion.p>
+              </div>
+            </motion.div>
+
+            {/* Image Column */}
+            <motion.div 
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10 flex justify-center items-center"
+            >
+              <img 
+                src="/s2.png"
+                alt="Purpose related image"
+                className="w-full h-auto object-contain max-h-96 rounded-lg shadow-lg"
+              />
+            </motion.div>
+          </div>
         </motion.div>
         
         {/* Vision Slogan */}
@@ -110,37 +122,51 @@ const SinglePage = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="relative py-20 px-6 md:px-12 bg-black text-white"
         >
-          <div className="absolute inset-0 bg-cover bg-center" style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05')",
-            filter: "brightness(0.65)"
-          }}></div>
-          <motion.div 
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="relative z-10 py-20 px-6 md:px-12 text-white"
-          >
-            <div className="max-w-3xl mx-auto">
-              <motion.h2 
-                variants={fadeInUp}
-                className="text-4xl md:text-5xl font-caesar mb-8 text-center tracking-wider"
-              >
-                VISION
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 text-center font-light">
-                To create a brand that embodies high performance—mentally, physically, and spiritually.
-              </motion.p>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 text-center font-light">
-                A movement for those who refuse to settle, who push limits, and live with intention.
-              </motion.p>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-center font-light">
-                Each piece is crafted to remind you of the legacy you carry—because greatness isn't just in the past. It's in you.
-              </motion.p>
-            </div>
-          </motion.div>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Text Column */}
+            <motion.div 
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="relative z-10"
+            >
+              <div className="max-w-none mx-auto text-left">
+                <motion.h2 
+                  variants={fadeInUp}
+                  className="text-4xl md:text-5xl font-caesar mb-8 tracking-wider"
+                >
+                  VISION
+                </motion.h2>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 font-ebgaramond">
+                  To create a brand that embodies high performance—mentally, physically, and spiritually.
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 font-ebgaramond">
+                  A movement for those who refuse to settle, who push limits, and live with intention.
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed font-ebgaramond">
+                  Each piece is crafted to remind you of the legacy you carry—because greatness isn't just in the past. It's in you.
+                </motion.p>
+              </div>
+            </motion.div>
+
+            {/* Image Column */}
+            <motion.div 
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10 flex justify-center items-center"
+            >
+              <img 
+                src="/s3.png"
+                alt="Vision related image"
+                className="w-full h-auto object-contain max-h-96 rounded-lg shadow-lg"
+              />
+            </motion.div>
+          </div>
         </motion.div>
         
         {/* Legacy Slogan */}
@@ -149,37 +175,111 @@ const SinglePage = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="relative py-20 px-6 md:px-12 bg-black text-white"
         >
-          <div className="absolute inset-0 bg-cover bg-center" style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1501854140801-50d01698950b')",
-            filter: "brightness(0.65)"
-          }}></div>
-          <motion.div 
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="relative z-10 py-20 px-6 md:px-12 text-white"
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Text Column */}
+            <motion.div 
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="relative z-10"
+            >
+              <div className="max-w-none mx-auto text-left">
+                <motion.h2 
+                  variants={fadeInUp}
+                  className="text-4xl md:text-5xl font-caesar mb-8 tracking-wider"
+                >
+                  LEGACY
+                </motion.h2>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 font-ebgaramond">
+                  Greek God isn't about the past—it's about unlocking the power already in you.
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 font-ebgaramond">
+                  This is for those who refuse to be ordinary. Who refuse to live small.
+                </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed font-ebgaramond">
+                  It's time to own your legacy.
+                </motion.p>
+              </div>
+            </motion.div>
+
+            {/* Image Column */}
+            <motion.div 
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10 flex justify-center items-center"
+            >
+              <img 
+                src="/s1.png"
+                alt="Legacy related image"
+                className="w-full h-auto object-contain max-h-96 rounded-lg shadow-lg"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Drop Sale Alert Section */}
+      <section className="w-full bg-black text-white py-20 px-6 md:px-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="container mx-auto text-center"
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-caesar mb-12 tracking-wider"
           >
-            <div className="max-w-3xl mx-auto">
-              <motion.h2 
-                variants={fadeInUp}
-                className="text-4xl md:text-5xl font-caesar mb-8 text-center tracking-wider"
-              >
-                LEGACY
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 text-center font-light">
-                Greek God isn't about the past—it's about unlocking the power already in you.
-              </motion.p>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed mb-4 text-center font-light">
-                This is for those who refuse to be ordinary. Who refuse to live small.
-              </motion.p>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl leading-relaxed text-center font-light">
-                It's time to own your legacy.
-              </motion.p>
-            </div>
-          </motion.div>
+            Upcoming Drop
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Product 1 */}
+            <motion.div
+              variants={fadeInUp}
+              viewport={{ once: true }}
+              className="flex flex-col bg-gray-900 rounded-lg shadow-xl overflow-hidden group transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="/p1.jpg" 
+                alt="Upcoming Product 1"
+                className="w-full h-auto object-cover"
+              />
+              {/* Text content below image */}
+              <div className="w-full p-4 text-center">
+                <p className="text-sm text-gray-500 font-light uppercase">ZEUS COLLECTION</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-1 font-caesar text-white">ZEUS ENERGY TEE</h3>
+                <p className="text-sm md:text-base mb-3 font-light text-gray-400">Channel the power of the gods with this striking graphic tee featuring the mighty Zeus.</p>
+                <p className="text-lg md:text-xl font-semibold text-yellow-400">Coming Soon</p>
+              </div>
+            </motion.div>
+
+            {/* Product 2 */}
+            <motion.div
+              variants={fadeInUp}
+              viewport={{ once: true }}
+              className="flex flex-col bg-gray-900 rounded-lg shadow-xl overflow-hidden group transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="/p2.jpg"
+                alt="Upcoming Product 2"
+                className="w-full h-auto object-cover"
+              />
+              {/* Text content below image */}
+              <div className="w-full p-4 text-center">
+                <p className="text-sm text-gray-500 font-light uppercase">CORE COLLECTION</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-1 font-caesar text-white">CLASSIC LOGO TEE</h3>
+                <p className="text-sm md:text-base mb-3 font-light text-gray-400">Represent the legacy with our essential tee, featuring the iconic Greek God logo.</p>
+                <p className="text-lg md:text-xl font-semibold text-yellow-400">Coming Soon</p>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -187,7 +287,7 @@ const SinglePage = () => {
       <Footer />
 
       {/* Newsletter component that hovers until footer is visible */}
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 };
